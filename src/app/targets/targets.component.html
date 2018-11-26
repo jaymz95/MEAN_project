@@ -1,0 +1,32 @@
+
+<mat-toolbar color="warn">Posts List</mat-toolbar>
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+  <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      <div>
+      </div>
+      <div [innerHTML]='post.url'></div>
+      <div [innerHTML]='someItem'></div>
+    </mat-expansion-panel-header>
+    <p>{{ post.title }}</p>
+    <p>{{ post.image }}</p>
+
+    <!--<div ng-repeat="post in model.post">
+            <div ng-switch="post.postType">
+                    <div ng-switch-when="YOUTUBE">
+    <iframe width="560" height="315" src="{{model.trustUrlResource(post.url)}}" frameborder="0" allowfullscreen></iframe>
+    
+    </div>
+    </div>
+    </div>-->
+    <div *ngIf='post.url'>
+    <iframe width="560" height="315" [src]="getEmbedUrl(post)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <mat-action-row>
+      <button mat-button color="primary">EDIT</button>
+      <button mat-button color="warn">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p> 
