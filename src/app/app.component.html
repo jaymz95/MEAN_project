@@ -1,5 +1,5 @@
 
-<!--<app-main-page></app-main-page>
+<!--
 <mat-toolbar color="primary"> 
   <mat-toolbar-row>
           <span class="title-center">
@@ -22,10 +22,14 @@
   </mat-toolbar-row>
   
   <mat-toolbar-row>
-    <button mat-button [routerLink]="['/user']" color="">User</button>
     <button mat-button [routerLink]="['/targets']" color="">Targets</button>
     <button mat-button [routerLink]="['/image']" color="">Progress</button>
+    <button mat-button [routerLink]="['/userD']" color="">User</button>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
+<div *ngIf="router.url === '/'">
+  <app-user-page></app-user-page>
+</div>

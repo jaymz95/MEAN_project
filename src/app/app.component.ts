@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { angular } from '@angular/$sce';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Project';
+
+  constructor(public router: Router) {
+
+  }
+
 }
-/*angular.module('myAppWithSceDisabledmyApp', []).config(function($sceProvider) {
-  // Completely disable SCE.  For demonstration purposes only!
-  // Do not use in new projects or libraries.
-  $sceProvider.enabled(false);
-});*/

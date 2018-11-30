@@ -1,5 +1,5 @@
 export interface Post {
-    url: string;
-    title: string;
-    image: string;
+    name: string;
+    weight: string;
+    height: string;
 }

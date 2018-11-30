@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 
 import { UserComponent } from './user/user.component';
 import { TargetsComponent } from './targets/targets.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 import {PostService} from './services/post.service';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +27,10 @@ import { MatInputModule,
   {
     path: 'targets',
     component: TargetsComponent
+  },
+  {
+    path: 'userD',
+    component: UserDetailsComponent
   }
 ];
 
@@ -33,7 +38,8 @@ import { MatInputModule,
   declarations: [
     AppComponent,
     UserComponent,
-    TargetsComponent
+    TargetsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,7 @@ import { MatInputModule,
     BrowserAnimationsModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
