@@ -25,22 +25,15 @@ export class UserComponent implements OnInit {
   constructor(private ps:PostService){}
 
   onAddPost(form: NgForm) {
-    
-    
-    this.ps.addPost(form.value.name, form.value.weight, form.value.height);
+
+    this.ps.addPost(form.value.name, form.value.weight, form.value.height).subscribe();
+    console.log(form.value);
     form.resetForm();
-    
-    console.log("yassssssssssssssssssssss work");
-    
+
   }
   
   ngOnInit(){
-    this.posts = this.ps.getPosts();
     
-    console.log("nrrrrrrrrrr work");
-      /*this.ps.getPostsData().subscribe(data => {
-        this.posts = data;
-    });*/
   }
 
 }

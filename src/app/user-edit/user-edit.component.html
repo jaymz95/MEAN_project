@@ -1,0 +1,43 @@
+<mat-card>
+    <form (submit)="onEditPost(postForm)" #postForm="ngForm">
+        Your First Name: 
+        <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="name"
+            ngModel={{post.name}}
+            required
+            minlength="3"
+            #name="ngModel">
+            <mat-error *ngIf="name.invalid">Please enter first name here</mat-error>
+        </mat-form-field><br/>
+        Your Weight(in kg): 
+        <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="weight"
+            ngModel={{post.weight}}
+            required
+            minlength="1"
+            #weight="ngModel">
+            <mat-error *ngIf="weight.invalid">Please enter your weight here</mat-error>
+        </mat-form-field><br/>
+        Your Height(in meters): 
+        <mat-form-field>
+            <input
+            matInput
+            name="height"
+            ngModel={{post.height}}
+            required
+            #height="ngModel">
+            <mat-error *ngIf="height.invalid">Please enter your height here</mat-error>
+        </mat-form-field><br/>
+        <!-- if clicked makes form disapear -->
+        <button
+        mat-raised-button
+        color="accent"
+        type="submit">Submit</button>
+    </form>
+</mat-card>

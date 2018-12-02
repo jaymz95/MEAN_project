@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
+import { UserEditComponent } from './user-edit/user-edit.component'
 import { UserComponent } from './user/user.component';
 import { TargetsComponent } from './targets/targets.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
@@ -31,6 +32,10 @@ import { MatInputModule,
   {
     path: 'userD',
     component: UserDetailsComponent
+  },
+  {
+    path: 'edit/:id',
+    component: UserEditComponent
   }
 ];
 
@@ -39,7 +44,8 @@ import { MatInputModule,
     AppComponent,
     UserComponent,
     TargetsComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
