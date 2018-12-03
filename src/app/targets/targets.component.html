@@ -1,22 +1,5 @@
 
 <mat-toolbar color="warn">Targets</mat-toolbar>
-<!--<mat-card>
-<form (submit)="onAddPost(postForm)" #postForm="ngForm">
-  Calories Consumed Today: 
-  <mat-form-field>
-      <input
-      matInput
-      type="text"
-      name="calories"
-      ngModel
-      required
-      minlength="3"
-      #name="ngModel">
-    <mat-error *ngIf="calories.invalid">Please enter calories consumed here</mat-error>
-  </mat-form-field><br/>
-</form>
-</mat-card>-->
-
 <mat-card>
     <form (submit)="calculate(postForm)" #postForm="ngForm">
         Calories Consumeed Today: 
@@ -35,6 +18,17 @@
         <button
         mat-raised-button
         color="accent"
-        type="submit">Submit</button>
-    </form>
+        type="submit" (click)="DropdownVar=2">Submit</button>
+    </form><br>
+
+    <!-- display calculations-->
+    <div *ngIf="DropdownVar === 2">
+        <p>To burn the calories you have consummed you could do: </p>
+        <p> {{ minWalk }} Mins Walking</p>
+        <p> {{ minRun }} Mins Running</p>
+        <p> {{ minSwim }} Mins Swimming</p>
+        <p> {{ minCycle }} Mins Cycling</p>
+        <p> {{ minSauna }} Mins in the Sauna</p>
+    </div>
+
 </mat-card> 

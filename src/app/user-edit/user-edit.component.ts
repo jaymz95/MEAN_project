@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router/src/router';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModule, Routes, Router } from '@angular/router';
 import {PostService} from '../services/post.service';
@@ -25,7 +24,6 @@ export class UserEditComponent implements OnInit {
       this.post = data;
       console.log(this.post);
       this.myName = this.post.title;
-      console.log("message" +this.myName);
 
     });
   }
